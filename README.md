@@ -2,16 +2,14 @@
 
 ## Overview
 
-goI18n 是一个命令行工具，旨在从基于 TOML 的国际化 (i18n) 消息包生成 Go 文件。该项目通过将 TOML 文件转换为可以处理不同语言和格式的结构化 Go 代码，促进了 Go 应用程序中多语言支持的创建。
-
+goI18n is a command-line tool designed to generate Go files from TOML-based internationalization (i18n) message packages. This project facilitates the creation of multi-language support in Go applications by converting TOML files into structured Go code that can handle different languages and formats.
 ## Features
 
-- **基于 TOML 的配置**：使用 TOML 文件定义您的 i18n 消息和状态代码。
-- **多语言支持**：使用结构化消息定义轻松支持多种语言。
-- **代码生成**：自动生成包含您的 i18n 消息和状态代码的 Go 文件。
-- **模板处理**：支持带有动态内容占位符的模板化消息。
-- **命令行**：简单直观的 CLI 来生成所需的 Go 文件。
-
+- **TOML-based configuration**: Define your i18n messages and status codes using TOML files.
+- **Multi-language support**: Easily support multiple languages using structured message definitions.
+- **Code generation**: Automatically generate Go files containing your i18n messages and status codes.
+- **Template handling**: Supports templated messages with dynamic content placeholders.
+- **Command line**: Simple and intuitive CLI to generate the required Go files.
 &nbsp;
 
 ---
@@ -174,7 +172,7 @@ Other notes:
 3. If `msg`, `singular`, `plural` are all set, only `singular` or `plural` will be returned based on `count`, and `msg` will not be returned.
 4. The settings of `msg`, `singular`, and `plural` must be consistent. It is not allowed for a `MessageKey` to have `msg` set while another `MessageKey` does not have `msg` set. The same applies to `singular` and `plural`.
 5. The `MessageKey` of different language files must be consistent. It is not allowed for one language to have it while another language does not.
-6. For template languages ​​supported by messages, please refer to the `text/template` package.
+6. For template languages supported by messages, please refer to the `text/template` package.
 7. The directory of the language file can be set by the `bundleDir` parameter of the command.
 
 > For examples of TOML files, please refer to the [example](example) directory.
