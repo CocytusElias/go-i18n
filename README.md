@@ -60,18 +60,18 @@ The basic format of the written TOML is as follows:
 
 ```toml
 [MessageKey] # MessageKey is the corresponding message name.
-ItemKey1 = ItemVal2 # This is a KV key-value pair
-ItemKey2 = ItemVal2 # This is the second KV key-value pair
+ItemKey1 = "ItemVal2" # This is a KV key-value pair
+ItemKey2 = "ItemVal2" # This is the second KV key-value pair
 ```
 
 In the above format, we can regard it as a `go struct` of `map[string]string`.
 
 In order to make it easier for us to understand the meaning of this configuration file, we convert it to `go` code.
 
-```go
+```
 MessageKey := map[string]string{
-"ItemKey1": "ItemVal2",
-"ItemKey2": "ItemVal2",
+    "ItemKey1": "ItemVal2",
+    "ItemKey2": "ItemVal2",
 }
 ```
 

@@ -62,18 +62,18 @@ TOML 配置文件分为两种，一种是 `Status And Code Toml`，另一种是 
 
 ```toml
 [MessageKey] # MessageKey 就是对应的消息名称。
-ItemKey1 = ItemVal2 # 这就是一个 KV 键值对
-ItemKey2 = ItemVal2 # 这是第二个 KV 键值对
+ItemKey1 = "ItemVal2" # 这就是一个 KV 键值对
+ItemKey2 = "ItemVal2" # 这是第二个 KV 键值对
 ```
 
 上面的格式，我们可以把他看做是一个 `map[string]string` 的 `go struct`。
 
 为了便于我们理解这个配置文件的意思，我们把他转换为 `go` 代码。
 
-```go
+```
 MessageKey := map[string]string{
-"ItemKey1": "ItemVal2",
-"ItemKey2": "ItemVal2",
+    "ItemKey1": "ItemVal2",
+    "ItemKey2": "ItemVal2",
 }
 ```
 
