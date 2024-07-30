@@ -1,0 +1,7 @@
+[NetworkAuthenticationRequiredMsg]
+msg = "Network authentication required"
+
+[TestMsg]
+msg = "This is a test message. Name: {{.Name}}, Age: {{.Age}}, Home Address: {{.Phone}}"
+singular = "This is a singular test message, suitable for the case where the data quantity is 1. Name: {{.Name}}, Age: {{.Age}}, Home Address: {{.Phone}}"
+plural = "This is a plural test message, suitable for cases where the data quantity is greater than 1. Name: {{.Name}}, Age: {{.Age}}, Home Address: {{.Phone}}"

@@ -1,0 +1,7 @@
+[NetworkAuthenticationRequiredMsg]
+msg = "需要网络身份验证"
+
+[TestMsg]
+msg = "这是一条测试消息。姓名：{{.Name}}，年龄：{{.Age}}，家庭住址：{{.Phone}}"
+singular = "这是一条单数测试消息，适用于数据量为1的情况。姓名：{{.Name}}，年龄：{{.Age}}，家庭住址：{{.Phone}}"
+plural = "这是一条复数测试消息，适用于数据量大于1的情况。姓名：{{.Name}}，年龄：{{.Age}}，家庭住址：{{.Phone}}"

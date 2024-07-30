@@ -1,0 +1,7 @@
+[NetworkAuthenticationRequiredMsg]
+code = 511
+status = 100511
+
+[TestMsg]
+code = 555
+status = 100555
