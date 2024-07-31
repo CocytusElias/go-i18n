@@ -51,7 +51,7 @@ func SendNetworkAuthenticationRequiredMsg(langCode string) (int, int, string) {
 		msg = bundle.Msg["zh-cn"]
 	}
 
-	return bundle.Code, bundle.Status, msg
+	return bundle.Status, bundle.Code, msg
 }
 
 // TestMsgParams is the parameter struct for the SendTestMsg method
@@ -92,7 +92,7 @@ func SendTestMsg(langCode string, count int, params TestMsgParams) (int, int, st
 	if err = tmpl.Execute(&buf, params); err != nil {
 		return 0, 0, "", err
 	}
-	return bundle.Code, bundle.Status, buf.String(), nil
+	return bundle.Status, bundle.Code, buf.String(), nil
 }
 
 func convertLangCode(langCode string) string {

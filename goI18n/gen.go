@@ -116,13 +116,13 @@ func Send{{ $key }}(langCode string{{ if or (len $value.Plural) (len $value.Sing
 
 	tmpl, err := template.New("message").Parse(msg)
 	if err != nil {
-		return {{ if $.CodeExist }}0{{ if $.StatusExist }}, 0{{ end }}, "", err{{ else if $.StatusExist }}0, "", err{{ else }}"", err{{ end }}
+		return {{ if $.StatusExist }}0{{ if $.CodeExist }}, 0{{ end }}, "", err{{ else if $.StatusExist }}0, "", err{{ else if $.CodeExist }}0, "", err{{ else }}"", err{{ end }}
 	}
 	var buf bytes.Buffer
 	if err = tmpl.Execute(&buf, params); err != nil {
-		return {{ if $.CodeExist }}0{{ if $.StatusExist }}, 0{{ end }}, "", err{{ else if $.StatusExist }}0, "", err{{ else }}"", err{{ end }}
+		return {{ if $.StatusExist }}0{{ if $.CodeExist }}, 0{{ end }}, "", err{{ else if $.StatusExist }}0, "", err{{ else if $.CodeExist }}0, "", err{{ else }}"", err{{ end }}
 	}
-	return {{ if $.CodeExist }}bundle.Code{{ if $.StatusExist }}, bundle.Status{{ end }}, buf.String(), nil{{ else if $.StatusExist }}bundle.Status, buf.String(), nil{{ else }}buf.String(), nil{{ end }}
+	return {{ if $.StatusExist }}bundle.Status{{ if $.CodeExist }}, bundle.Code{{ end }}, buf.String(), nil{{ else if $.StatusExist }}bundle.Status, buf.String(), nil{{ else if $.CodeExist }}bundle.Code, buf.String(), nil{{ else }}buf.String(), nil{{ end }}
 }
 {{- else }}
 func Send{{ $key }}(langCode string{{ if or (len $value.Plural) (len $value.Singular) }}, count int{{ end }}) {{ if $.CodeExist }}(int{{ if $.StatusExist }}, int{{ end }}, string){{ else if $.StatusExist }}(int, string){{ else }}(string){{ end }} {
@@ -167,7 +167,7 @@ func Send{{ $key }}(langCode string{{ if or (len $value.Plural) (len $value.Sing
 	}
 	{{- end }}
 
-	return {{ if $.CodeExist }}bundle.Code{{ if $.StatusExist }}, bundle.Status{{ end }}, msg{{ else if $.StatusExist }}bundle.Status, msg{{ else }}msg{{ end }}
+	return {{ if $.StatusExist }}bundle.Status{{ if $.CodeExist }}, bundle.Code{{ end }}, msg{{ else if $.StatusExist }}bundle.Status, msg{{ else if $.CodeExist }}bundle.Code, msg{{ else }}msg{{ end }}
 }
 {{- end }}
 {{- end }}
