@@ -250,4 +250,4 @@ The interaction between `i18nPkgName` and `outputDir`, I will give a few example
 
 ## maintains
 
-[@eliassama](https://github.com/eliassama)
+[@CocytusElias](https://github.com/CocytusElias)
